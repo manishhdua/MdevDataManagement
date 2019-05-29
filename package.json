@@ -1,22 +1,23 @@
 {
-  "name": "mdev1001-22may",
+  "name": "mdevdatamanagement",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sqlite3": "^4.0.8"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chgibb/MDEV1001-22May.git"
+    "url": "git+https://github.com/manishhdua/MdevDataManagement.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chgibb/MDEV1001-22May/issues"
+    "url": "https://github.com/manishhdua/MdevDataManagement/issues"
   },
-  "homepage": "https://github.com/chgibb/MDEV1001-22May#readme",
-  "devDependencies": {
-    "sqlite3": "^4.0.8"
-  }
+  "homepage": "https://github.com/manishhdua/MdevDataManagement#readme"
 }
