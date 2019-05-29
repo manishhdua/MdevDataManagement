@@ -1,7 +1,7 @@
 const sqlite3 = require("sqlite3").verbose();
-//Create an in memory database
+// 1 : Create an in memory database
 const db = new sqlite3.Database(":memory:");
- //Creating and Inserting in ‘Classroom’ table.
+// 1.1 :Creating and Inserting in ‘Classroom’ table.
 
 db.serialize(function(){
     db.run("CREATE TABLE Classroom (Building TEXT, Room_number NUMBER, Capacity NUMBER )" );
@@ -14,7 +14,7 @@ db.serialize(function(){
     console.log(row);
     });
 });
-//Creating and Inserting in ‘Depatment’ table.
+// 1.2 :Creating and Inserting in ‘Depatment’ table.
 
 db.serialize(function(){
     db.run("CREATE TABLE Department (Dept_name TEXT, Building TEXT, Budget NUMBER)" );
@@ -30,7 +30,7 @@ db.serialize(function(){
     });
 });
 
-//Print the room number and building name for those rooms whose capacity is greater than 50.
+//2. Print the room number and building name for those rooms whose capacity is greater than 50.
     db.each(
         "SELECT Building, Room_number FROM Classroom WHERE Capacity > 50",
         function(err,row){
@@ -39,7 +39,7 @@ db.serialize(function(){
             }
             console.log(row);
     });
-//Print the names of those departments whose budgets are greater than $85,000.
+//3. Print the names of those departments whose budgets are greater than $85,000.
     db.each(
         "SELECT Dept_name FROM Department WHERE Budget > 85000",
         function(err,row){
@@ -48,7 +48,7 @@ db.serialize(function(){
             }
             console.log(row);        
     });
-//For each department, print the total capacity available.
+//4. For each department, print the total capacity available.
     db.each(
         `SELECT Dept_name,SUM(Capacity) as total FROM DEPARTMENT as DEPART
         LEFT JOIN Classroom as Class
